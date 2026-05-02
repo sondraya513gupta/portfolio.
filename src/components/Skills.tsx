@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Code2, Database, Layout, Cpu, Globe, Terminal, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
 import styles from './Skills.module.css';
 
 const Skills = () => {
@@ -43,7 +44,14 @@ const Skills = () => {
 
         <div className={styles.grid}>
           {categories.map((cat, i) => (
-            <div key={i} className={styles.card}>
+            <motion.div 
+              key={i} 
+              className={styles.card}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
               <div className={styles.cardHeader}>
                 <div className={styles.icon}>{cat.icon}</div>
                 <h3 className={styles.catTitle}>{cat.title}</h3>
@@ -56,7 +64,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -30,22 +30,19 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`${styles.container} container`}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoText}>Portfolio</span>
+          <span className={styles.logoText}>SG</span>
           <span className={styles.dot}>.</span>
         </Link>
 
         {/* Desktop Nav */}
         <ul className={styles.navLinks}>
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <Link href={link.href} className={styles.navLink}>
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          <li><Link href="#experience" className={styles.navLink}>Experience</Link></li>
+          <li><Link href="#projects" className={styles.navLink}>Projects</Link></li>
+          <li><Link href="#skills" className={styles.navLink}>Skills</Link></li>
+          <li><Link href="#contact" className={styles.navLink}>Contact</Link></li>
           <li>
             <Link href="#contact" className={styles.cta}>
-              Hire Me
+              Let's Talk
             </Link>
           </li>
         </ul>

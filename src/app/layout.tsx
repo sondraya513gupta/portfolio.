@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Enterprise-level software engineer portfolio specializing in Full Stack development and AI/RAG solutions. Currently at Mobiloitte Technologies.",
 };
 
+import Background from "@/components/Background";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Background />
+        {children}
+      </body>
     </html>
   );
 }

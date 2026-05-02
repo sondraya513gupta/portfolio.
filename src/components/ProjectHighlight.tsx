@@ -55,7 +55,14 @@ const ProjectHighlight = () => {
 
         <div className={styles.projectList}>
           {projects.map((project, index) => (
-            <div key={index} className={styles.projectCard}>
+            <motion.div 
+              key={index} 
+              className={styles.projectCard}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
+            >
               <div className={styles.projectContent}>
                 <div className={styles.tag}>{project.tag}</div>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
@@ -82,7 +89,13 @@ const ProjectHighlight = () => {
 
               <div className={styles.projectImage}>
                 <div className={styles.imageOverlay}></div>
-                <div className={index % 2 === 0 ? styles.mockup : styles.mockupAlt}>
+                <motion.div 
+                  className={index % 2 === 0 ? styles.mockup : styles.mockupAlt}
+                  initial={{ opacity: 0, scale: 0.9, rotateY: index % 2 === 0 ? 10 : -10 }}
+                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
                   <div className={styles.mockupHeader}>
                     <div className={styles.mockupDot}></div>
                     <div className={styles.mockupDot}></div>
@@ -118,9 +131,9 @@ const ProjectHighlight = () => {
                       </div>
                     )}
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

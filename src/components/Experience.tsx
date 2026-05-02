@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import styles from './Experience.module.css';
 
@@ -32,7 +33,14 @@ const Experience = () => {
 
         <div className={styles.timeline}>
           {experiences.map((exp, i) => (
-            <div key={i} className={styles.timelineItem}>
+            <motion.div 
+              key={i} 
+              className={styles.timelineItem}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
               <div className={styles.timelineIcon}>
                 <Briefcase size={20} />
               </div>
@@ -49,7 +57,7 @@ const Experience = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
