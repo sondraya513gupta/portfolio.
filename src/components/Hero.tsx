@@ -10,7 +10,7 @@ const Hero = () => {
       <div className={styles.bgOverlay}></div>
       <div className={`${styles.container} container`}>
         <div className={styles.content}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -18,7 +18,7 @@ const Hero = () => {
           >
             Full Stack Developer @ Mobiloitte
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -26,16 +26,16 @@ const Hero = () => {
           >
             Crafting the Future with <span className="text-gradient">AI & Full Stack</span> Engineering
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={styles.subtitle}
           >
-            Proficient in Next.js, Python, and RAG systems. Building scalable, 
+            Proficient in Next.js, Python, and RAG systems. Building scalable,
             AI-powered solutions with clean code and enterprise-grade architecture.
           </motion.p>
-          
+
           <div className={styles.actions}>
             <a href="#projects" className={styles.primaryBtn}>
               View Projects
@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}

@@ -1,6 +1,0 @@
-{"timestamp":"00:08:42.189","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}
-{"timestamp":"00:08:42.206","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}
-{"timestamp":"00:08:54.347","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}
-{"timestamp":"00:08:54.524","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}
-{"timestamp":"00:09:10.857","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}
-{"timestamp":"00:09:10.874","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\sondr\\OneDrive\\Desktop\\Portfolio\\portfolio\\src\\app'"}

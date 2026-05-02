@@ -8,10 +8,14 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.content}>
-          <p>© {new Date().getFullYear()} Software Engineer Portfolio. Built with Next.js & Framer Motion.</p>
+          <div className={styles.left}>
+            <p className={styles.copyright}>© {new Date().getFullYear()} <span className="text-gradient">Sondrya Gupta</span>. All rights reserved.</p>
+            <p className={styles.tagline}>Engineering Excellence in AI & Full Stack Development.</p>
+          </div>
           <div className={styles.links}>
-            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
           </div>
         </div>

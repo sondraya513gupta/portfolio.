@@ -6,10 +6,24 @@ import styles from './Contact.module.css';
 
 const Contact = () => {
   const [result, setResult] = React.useState<string | null>(null);
-  const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error' | 'already_sent'>('idle');
+
+  React.useEffect(() => {
+    if (localStorage.getItem('contact_submitted')) {
+      setStatus('already_sent');
+      setResult("You have already sent a message recently. Thank you for connecting!");
+    }
+  }, []);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    if (localStorage.getItem('contact_submitted')) {
+      setStatus('already_sent');
+      setResult("You have already sent a message. Thank you!");
+      return;
+    }
+
     setStatus('submitting');
     setResult("Sending....");
     
@@ -26,7 +40,8 @@ const Contact = () => {
 
       if (data.success) {
         setStatus('success');
-        setResult("Message sent successfully!");
+        setResult("Message sent successfully! I will get back to you soon.");
+        localStorage.setItem('contact_submitted', 'true');
         (event.target as HTMLFormElement).reset();
       } else {
         console.log("Error", data);
@@ -77,35 +92,35 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className={styles.form} onSubmit={onSubmit}>
+          <form className={`${styles.form} ${status === 'already_sent' ? styles.disabled : ''}`} onSubmit={onSubmit}>
             <div className={styles.formGroup}>
               <label>Full Name</label>
-              <input type="text" name="name" required placeholder="John Doe" className={styles.input} />
+              <input type="text" name="name" required placeholder="John Doe" className={styles.input} disabled={status === 'already_sent' || status === 'submitting'} />
             </div>
             <div className={styles.formGroup}>
               <label>Email Address</label>
-              <input type="email" name="email" required placeholder="john@example.com" className={styles.input} />
+              <input type="email" name="email" required placeholder="john@example.com" className={styles.input} disabled={status === 'already_sent' || status === 'submitting'} />
             </div>
             <div className={styles.formGroup}>
               <label>Message</label>
-              <textarea name="message" required placeholder="Your message here..." className={styles.textarea}></textarea>
+              <textarea name="message" required placeholder="Your message here..." className={styles.textarea} disabled={status === 'already_sent' || status === 'submitting'}></textarea>
             </div>
             
             {status !== 'idle' && (
-              <div className={`${styles.feedback} ${styles[status]}`}>
-                {status === 'success' && <CheckCircle size={18} />}
+              <div className={`${styles.feedback} ${styles[status === 'already_sent' ? 'success' : status]}`}>
+                {(status === 'success' || status === 'already_sent') && <CheckCircle size={18} />}
                 {status === 'error' && <AlertCircle size={18} />}
                 {result}
               </div>
             )}
-
+            
             <button 
               type="submit" 
               className={styles.submitBtn} 
-              disabled={status === 'submitting'}
+              disabled={status === 'submitting' || status === 'already_sent'}
             >
-              {status === 'submitting' ? 'Sending...' : 'Send Message'} 
-              {status !== 'submitting' && <Send size={18} />}
+              {status === 'submitting' ? 'Sending...' : (status === 'already_sent' ? 'Message Received' : 'Send Message')} 
+              {status !== 'submitting' && status !== 'already_sent' && <Send size={18} />}
             </button>
           </form>
         </div>

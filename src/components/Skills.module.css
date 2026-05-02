@@ -79,3 +79,18 @@
   opacity: 1;
   transform: scale(1.5);
 }
+
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .card { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px) {
+  .title { font-size: 1.8rem; }
+  .card { padding: 1.25rem; }
+}

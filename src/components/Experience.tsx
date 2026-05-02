@@ -11,7 +11,7 @@ const Experience = () => {
       role: 'Full Stack Software Engineer',
       period: '2025 - Present',
       description: 'Leading AI initiatives and full-stack development projects. Specialized in building and deploying RAG-based chatbots and enterprise administrative panels.',
-      skills: ['FastAPI', 'Next.js', 'AWS', 'Python', 'React','JavaScript']
+      skills: ['FastAPI', 'Next.js', 'AWS', 'Python', 'React', 'JavaScript']
     },
     {
       company: 'India Marketing Solutions',

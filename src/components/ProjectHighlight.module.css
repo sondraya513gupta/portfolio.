@@ -173,6 +173,32 @@
 
 @media (max-width: 1024px) {
   .projectCard { grid-template-columns: 1fr; }
+  .projectTitle { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle { font-size: 2.2rem; }
+  .projectContent { padding: 2rem; }
+  .featureGrid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .projectTitle { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .projectContent { padding: 1.5rem; }
+  .sectionTitle { font-size: 2rem; }
+  .projectTitle { font-size: 1.5rem; }
+  .links { flex-direction: column; gap: 1rem; }
+}
+
+@media (max-width: 360px) {
+  .projectContent { padding: 1rem; }
+  .sectionTitle { font-size: 1.8rem; }
+  .projectTitle { font-size: 1.3rem; }
+  .featureGrid { gap: 1rem; }
+  .feature { gap: 0.8rem; }
+  .featureIcon { padding: 6px; }
+  .featureTitle { font-size: 0.9rem; }
+  .featureDesc { font-size: 0.8rem; }
 }
 
 .projectList {
