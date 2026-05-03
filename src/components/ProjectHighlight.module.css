@@ -21,6 +21,8 @@
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   transition: all 0.4s ease;
+  min-width: 0;
+  width: 100%;
 }
 
 .projectCard:hover {
@@ -104,6 +106,8 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .imageOverlay {
@@ -188,6 +192,8 @@
   .sectionTitle { font-size: 2rem; }
   .projectTitle { font-size: 1.5rem; }
   .links { flex-direction: column; gap: 1rem; }
+  .codeSnippet { font-size: 0.65rem; padding: 0.8rem; }
+  .mockupAlt { max-width: 100%; overflow: hidden; }
 }
 
 @media (max-width: 360px) {
@@ -199,6 +205,7 @@
   .featureIcon { padding: 6px; }
   .featureTitle { font-size: 0.9rem; }
   .featureDesc { font-size: 0.8rem; }
+  .codeSnippet { font-size: 0.55rem; padding: 0.5rem; }
 }
 
 .projectList {
@@ -224,8 +231,14 @@
   color: #abb2bf;
   padding: 1rem;
   line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
 }
 
 .codeSnippet code {
   color: #98c379;
+  white-space: pre-wrap;
+  word-break: break-all;
 }

@@ -47,29 +47,29 @@ const Hero = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className={styles.visualContainer}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className={styles.imageContainer}
         >
-          <div className={styles.visualGlow}></div>
-          <img 
-            src="/enterprise_ai_hero_visual_1777755201838.png" 
-            alt="Enterprise AI Engineering" 
-            className={styles.heroImage}
-          />
-        </motion.div>
-
-        <motion.div 
-          className={styles.scrollIndicator}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
-          <div className={styles.mouse}>
-            <div className={styles.wheel}></div>
+          <div className={styles.glow}></div>
+          <div className={styles.floatingCard}>
+            <div className={styles.cardHeader}>
+              <div className={styles.dotRed}></div>
+              <div className={styles.dotYellow}></div>
+              <div className={styles.dotGreen}></div>
+            </div>
+            <div className={styles.cardBody}>
+              <code className={styles.code}>
+                <span className={styles.keyword}>const</span> <span className={styles.variable}>engineer</span> = {'{'}<br />
+                &nbsp;&nbsp;name: <span className={styles.string}>'Sondrya Gupta'</span>,<br />
+                &nbsp;&nbsp;role: <span className={styles.string}>'Full Stack Developer'</span>,<br />
+                &nbsp;&nbsp;company: <span className={styles.string}>'Mobiloitte Technologies'</span>,<br />
+                &nbsp;&nbsp;passion: <span className={styles.string}>'Turning ideas into intelligent code'</span><br />
+                {'}'};
+              </code>
+            </div>
           </div>
-          <span>Scroll Down</span>
         </motion.div>
       </div>
     </section>

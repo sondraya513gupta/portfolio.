@@ -41,7 +41,7 @@ const ProjectHighlight = () => {
         { icon: <ShieldCheck size={20} />, title: 'Metadata Filtering', desc: 'Enhanced search relevance with metadata-based filtering.' },
         { icon: <Zap size={20} />, title: 'Semantic Ranking', desc: 'Improved response relevance using semantic ranking.' },
       ],
-      link: '#'
+      link: ''
     }
   ];
 
@@ -80,11 +80,13 @@ const ProjectHighlight = () => {
                   ))}
                 </div>
 
-                <div className={styles.links}>
-                  <a href={project.link} className={styles.link}>
-                    Details <ExternalLink size={16} />
-                  </a>
-                </div>
+                {project.link && (
+                  <div className={styles.links}>
+                    <a href={project.link} className={styles.link} target="_blank" rel="noopener noreferrer">
+                      Details <ExternalLink size={16} />
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className={styles.projectImage}>
