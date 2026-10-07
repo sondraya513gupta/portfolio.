@@ -88,7 +88,32 @@
 .desc {
   line-height: 1.7;
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.pointsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pointItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bullet {
+  color: var(--primary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-shrink: 0;
 }
 
 .tags {

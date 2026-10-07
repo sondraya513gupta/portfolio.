@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Bot, Server, ShieldCheck, Zap, Database, Code2, ArrowUpRight, Layers } from 'lucide-react';
+import { Bot, Server, ShieldCheck, Zap, Database, Code2, ArrowUpRight, Layers } from 'lucide-react';
 import styles from './ProjectHighlight.module.css';
 
 const featuredProject = {
@@ -18,7 +18,6 @@ const featuredProject = {
     { icon: <Server size={20} />, title: 'FastAPI + S3 Backend', desc: 'High-performance Python API with S3-backed FAISS vector store for sub-second retrieval.' },
     { icon: <ShieldCheck size={20} />, title: 'Multi-Tenant Architecture', desc: 'Isolated, secure data environments per tenant — BankProps and future partners.' },
   ],
-  link: 'https://bankprops.converiqo.ai/demo',
   chat: [
     { role: 'bot', text: 'Welcome to BankProps! I can help you find vetted auction properties. What are you looking for?' },
     { role: 'user', text: 'Show retail listings near Mumbai under ₹2Cr.' },
@@ -38,7 +37,6 @@ const projects = [
       { icon: <ShieldCheck size={18} />, title: 'AWS Deployment' },
       { icon: <Zap size={18} />, title: 'Admin Metrics Panel' },
     ],
-    link: 'https://furniture.converiqo.ai/demo',
   },
   {
     tag: 'Full Stack AI',
@@ -51,7 +49,6 @@ const projects = [
       { icon: <Zap size={18} />, title: 'Memory Management' },
       { icon: <ShieldCheck size={18} />, title: 'Admin Dashboard' },
     ],
-    link: 'https://stgnightclubs.converiqo.ai/',
   },
   {
     tag: 'AI & Retrieval',
@@ -64,7 +61,6 @@ const projects = [
       { icon: <ShieldCheck size={18} />, title: 'Metadata Filtering' },
       { icon: <Zap size={18} />, title: 'Semantic Ranking' },
     ],
-    link: '',
   },
 ];
 
@@ -132,10 +128,6 @@ const ProjectHighlight = () => {
                   </div>
                 ))}
               </div>
-
-              <a href={featuredProject.link} className={styles.featuredLink} target="_blank" rel="noopener noreferrer">
-                View Live Demo <ArrowUpRight size={18} />
-              </a>
             </div>
 
             {/* Right — Chat mockup */}
@@ -192,11 +184,6 @@ const ProjectHighlight = () => {
             >
               <div className={styles.gridCardTop}>
                 <span className={styles.gridTag}>{project.tag}</span>
-                {project.link && (
-                  <a href={project.link} className={styles.gridExternalLink} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={15} />
-                  </a>
-                )}
               </div>
 
               <h3 className={styles.gridTitle}>{project.title}</h3>
